@@ -3,25 +3,30 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Basic</title>
+    <title>Demo</title>
+    <style>
+        a.test {
+            font-size: 28px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <a href="http://jquery.com/">jQuery</a>
     <script src="jquery.js"></script>
-
     <script>
-
         $(document).ready(function () {
-
             $("a").click(function (event) {
-
-                alert("Thanks for visiting!");
-
+                alert("The link will no longer take you to jquery.com");
+                $( "a" ).removeClass( "test" );
+                event.preventDefault();
+                $( this ).hide( "slow" );
             });
 
-        });
+            $( "a" ).addClass( "test" );
 
+        })
     </script>
 </body>
 
